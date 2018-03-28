@@ -5,6 +5,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/mobiscroll.javascript.min.css">
+    <link rel="stylesheet" href="css/city.css">
     <link rel="stylesheet" href="css/android-holo.css">
     <link rel="stylesheet" href="css/style.css">
     <title>首页</title>
@@ -16,8 +17,9 @@
             <img src="images/title.png" alt="">
         </div>
         <div class="title">
-            <h1>门槛低 额度高</h1>
-            <h2>极速两小时</h2>
+            <!--<h1>门槛低 额度高</h1>
+            <h2>极速两小时</h2>-->
+            <img src="images/title_index.png">
         </div>
     </div>
 
@@ -67,7 +69,7 @@
                                 <div class="icon">
                                     <img src="images/phone.png" alt="">
                                 </div>
-                                <input type="text" placeholder="请输入您的手机号" name="phone" maxlength="11">
+                                <input type="tel" placeholder="请输入您的手机号" name="phone" maxlength="11"  class="phone">
                             </div>
                         </li>
 
@@ -76,19 +78,19 @@
                                 <div class="icon">
                                     <img src="images/code.png" alt="">
                                 </div>
-                                <input type="text" placeholder="请输入短信验证码" name="code">
+                                <input type="tel" placeholder="请输入短信验证码" name="code" maxlength="4">
                                 <button type="button" class="getcode">获取验证码</button>
                             </div>
                         </li>
                         <li>
                             <div class="is_agree"></div>
-                            <input type="checkbox" name="xieyi" checked>
-                            <p class="xieyi">同意<span>《用户协议》</span>并申请信用贷款</p>
+                            <input type="checkbox" name="xieyi" checked value="true">
+                            <p class="xieyi">同意<a href="xieyi.html">《用户协议》</a>并申请信用贷款</p>
                         </li>
                         <li><button type="submit" class="submit">下一步</button></li>
                         <li>
-                            <div class="is_apply"></div>
-                            <input type="checkbox" name="apply">
+                            <div class="is_apply active"></div>
+                            <input type="checkbox" name="apply" checked>
                             <p class="gift">申请有礼：送100万赔付意外险，平安出行</p>
                         </li>
                     </ul>
@@ -96,20 +98,23 @@
             </div>
             <div class="tip">
                 <div class="tip_title">
-                    <h2><span></span>平台郑重承诺<span></span></h2>
+                        <h2>平台郑重承诺</h2>
+                        <span></span>
                 </div>
                 <p>
                     所有贷款申请在未成功放款前绝不收取任何费用，为保障您的资金安全，请不要相信任何要求您支付费用的信息、邮件、电话等不实信息。
                 </p>
             </div>
         </div>
-        <div class="bg"></div>
+        <!--<div class="bg"></div>-->
     </div>
     <div class="item_box">
         <div class="item_body">
             <div class="path">
                 <div class="path_title">
-                    <h2><span></span>纯信用&nbsp;&nbsp;免抵押<span></span></h2>
+                        <h2>纯信用&nbsp;&nbsp;免抵押</h2>
+                        <span></span>
+                </div>
                     <ul>
                         <li>
                             <div class="item_pic"><img src="images/item.png" alt=""></div>
@@ -128,7 +133,6 @@
                             <p>最快30min<br>银行放款</p>
                         </li>
                     </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -137,7 +141,10 @@
         <div class="list_body">
             <div class="list">
                 <div class="list_title">
-                    <h2><span></span>纯信用&nbsp;&nbsp;免抵押<span></span></h2>
+                        <h2>推荐贷款机构</h2>
+                        <span></span>
+                </div>
+
                     <ul>
                         <li>
                             <img src="images/list.png" alt="">
@@ -153,7 +160,6 @@
                             <img src="images/list4.png" alt="">
                         </li>
                     </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -166,7 +172,8 @@
     <div class="main_2">
         <div class="info">
             <div class="info_title">
-                <h2><span></span>完善征信信息 获取贷款<span></span></h2>
+                <h2>完善征信信息 获取贷款</h2>
+                <span></span>
             </div>
         </div>
 
@@ -181,7 +188,7 @@
                         <p class="m2_left">所在城市</p>
 
                         <div class="m2_right">
-                            <input type="text" placeholder="请选择所在城市" name="city" id="city">
+                            <input type="text" placeholder="请选择所在城市" name="city" id="city" readonly>
                             <img src="images/down.png" class="down">
                         </div>
                     </li>
@@ -215,7 +222,7 @@
                         <p class="m2_left">借款金额</p>
 
                         <div class="m2_right">
-                            <input type="text" placeholder="请选择额度范围" class="money" name="money">
+                            <input type="text" placeholder="请选择额度范围" class="money" name="money" readonly>
                             <img src="images/down.png" class="down">
                         </div>
                     </li>
@@ -224,7 +231,7 @@
                         <p class="m2_left">工作职业</p>
 
                         <div class="m2_right">
-                            <input type="text" placeholder="请选择职业" class="job" name="job">
+                            <input type="text" placeholder="请选择职业" class="job" name="job" readonly>
                             <img src="images/down.png" class="down">
                         </div>
                     </li>
@@ -310,6 +317,22 @@
                     </li>
 
                     <li class="button_box">
+                        <p class="m2_left">有社保</p>
+
+                        <div class="m2_right">
+                            <div class="radio_box_2">
+                                <input type="radio" name="shebao" value="是" id="shebao_y">
+                                <label for="shebao_y">是</label>
+                            </div>
+
+                            <div class="radio_box_2">
+                                <input type="radio" name="shebao" value="否" id="shebao_n">
+                                <label for="shebao_n">否</label>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="button_box">
                         <p class="m2_left">有信用卡</p>
 
                         <div class="m2_right">
@@ -353,22 +376,6 @@
                             <div class="radio_box">
                                 <input type="radio" name="baofei" value="2400以下" id="baofei_n">
                                 <label for="baofei_n">2400以下</label>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="button_box">
-                        <p class="m2_left">有社保</p>
-
-                        <div class="m2_right">
-                            <div class="radio_box_2">
-                                <input type="radio" name="shebao" value="是" id="shebao_y">
-                                <label for="shebao_y">是</label>
-                            </div>
-
-                            <div class="radio_box_2">
-                                <input type="radio" name="shebao" value="否" id="shebao_n">
-                                <label for="shebao_n">否</label>
                             </div>
                         </div>
                     </li>
@@ -417,16 +424,625 @@
         </div>
     </div>
 </div>
+<div class="city_box">
+    <header class="top-bar" style="position:absolute;top:0px;left:0px;width:100%;overflow:auto;">
+        <a href="javascript:void(0);" class="x-close">×</a>
+        <p>选择城市</p>
+    </header>
+    <div class="hot_city" id="gps">
+        <div class="hot_tit"> <span>GPS定位你当前城市</span></div>
+        <div class="hot_list">
+            <ul>
+                <li><a id="gpsCity" data-val="" href="javascript:void(0)"></a></li>
+            </ul>
+        </div>
+    </div>
+
+<!--城市-->
+    <div class="hot_city">
+        <div class="hot_tit"> <span>热门城市</span> </div>
+        <div class="hot_list">
+            <ul>
+                <li><a data-val="110100" href="javascript:void(0)">北京</a></li>
+                <li><a data-val="440100" href="javascript:void(0)">广州</a></li>
+                <li><a data-val="440300" href="javascript:void(0)">深圳</a></li>
+                <li><a data-val="310100" href="javascript:void(0)" class="bord">上海</a></li>
+                <li><a data-val="510100" href="javascript:void(0)">成都</a></li>
+                <li><a data-val="420100" href="javascript:void(0)">武汉</a></li>
+                <li><a data-val="230100" href="javascript:void(0)">哈尔滨</a></li>
+                <li><a data-val="430100" href="javascript:void(0)" class="bord">长沙</a></li>
+                <li><a data-val="500100" href="javascript:void(0)">重庆</a></li>
+                <li><a data-val="610100" href="javascript:void(0)">西安</a></li>
+                <li><a data-val="410100" href="javascript:void(0)">郑州</a></li>
+                <li><a data-val="120100" href="javascript:void(0)" class="bord">天津</a></li>
+                <li><a data-val="130100" href="javascript:void(0)">石家庄 </a></li>
+                <li><a data-val="130200" href="javascript:void(0)"> 唐山</a></li>
+                <li><a data-val="130600" href="javascript:void(0)">保定 </a></li>
+                <li><a data-val="320500" href="javascript:void(0)" class="bord"> 苏州</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="rank_city">
+        <div class="rank_tit" style="border-bottom: 1px solid #e9e9e9;"> <span>按字母选择</span> </div>
+        <div class="rank_list">
+            <ul>
+                <li><a href="#atop">A</a></li>
+                <li><a href="#btop">B</a></li>
+                <li><a href="#ctop">C</a></li>
+                <li><a href="#dtop">D</a></li>
+                <li><a href="#etop">E</a></li>
+                <li><a href="#ftop">F</a></li>
+                <li><a href="#gtop">G</a></li>
+                <li><a href="#htop">H</a></li>
+                <li><a href="#jtop">J</a></li>
+                <li><a href="#ktop">K</a></li>
+                <li><a href="#ltop">L</a></li>
+                <li><a href="#mtop">M</a></li>
+                <li><a href="#ntop">N</a></li>
+                <li><a href="#ptop">P</a></li>
+                <li><a href="#qtop">Q</a></li>
+                <li><a href="#rtop">R</a></li>
+                <li><a href="#stop">S</a></li>
+                <li><a href="#ttop">T</a></li>
+                <li><a href="#wtop">W</a></li>
+                <li><a href="#xtop">X</a></li>
+                <li><a href="#ytop">Y</a></li>
+                <li><a href="#ztop">Z</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="atop"></a>
+        <div class="letters_tit"> <span>A(以A为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="210300" href="javascript:void(0)">鞍山</a></li>
+                <li><a data-val="152900" href="javascript:void(0)">阿拉善</a></li>
+                <li><a data-val="340800" href="javascript:void(0)">安庆</a></li>
+                <li><a data-val="410500" href="javascript:void(0)">安阳</a></li>
+                <li><a data-val="542500" href="javascript:void(0)">阿里</a></li>
+                <li><a data-val="610900" href="javascript:void(0)">安康</a></li>
+                <li><a data-val="520400" href="javascript:void(0)">安顺</a></li>
+                <li><a data-val="513200" href="javascript:void(0)">阿坝</a></li>
+                <li><a data-val="659002" href="javascript:void(0)">阿拉尔</a></li>
+                <li><a data-val="652900" href="javascript:void(0)">阿克苏</a></li>
+                <li><a data-val="820100" href="javascript:void(0)">澳门</a></li>
+                <li><a data-val="654300" href="javascript:void(0)">阿勒泰</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="btop"></a>
+        <div class="letters_tit"> <span>B(以B为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="220800" href="javascript:void(0)">白城</a></li>
+                <li><a data-val="150200" href="javascript:void(0)">包头</a></li>
+                <li><a data-val="150800" href="javascript:void(0)">巴彦淖尔</a></li>
+                <li><a data-val="130600" href="javascript:void(0)">保定</a></li>
+                <li><a data-val="210500" href="javascript:void(0)">本溪</a></li>
+                <li><a data-val="220600" href="javascript:void(0)">白山</a></li>
+                <li><a data-val="341600" href="javascript:void(0)">亳州</a></li>
+                <li><a data-val="340300" href="javascript:void(0)">蚌埠</a></li>
+                <li><a data-val="371600" href="javascript:void(0)">滨州</a></li>
+                <li><a data-val="620400" href="javascript:void(0)">白银</a></li>
+                <li><a data-val="610300" href="javascript:void(0)">宝鸡</a></li>
+                <li><a data-val="530500" href="javascript:void(0)">保山</a></li>
+                <li><a data-val="469030" href="javascript:void(0)">白沙</a></li>
+                <li><a data-val="451000" href="javascript:void(0)">百色</a></li>
+                <li><a data-val="522401" href="javascript:void(0)">毕节</a></li>
+                <li><a data-val="450500" href="javascript:void(0)">北海</a></li>
+                <li><a data-val="511900" href="javascript:void(0)">巴中</a></li>
+                <li><a data-val="469035" href="javascript:void(0)">保亭</a></li>
+                <li><a data-val="652800" href="javascript:void(0)">库尔勒</a></li>
+                <li><a data-val="652700" href="javascript:void(0)">博乐</a></li>
+                <li><a data-val="110100" href="javascript:void(0)">北京</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ctop"></a>
+        <div class="letters_tit"> <span>C(以C为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="140400" href="javascript:void(0)">长治</a></li>
+                <li><a data-val="130900" href="javascript:void(0)">沧州</a></li>
+                <li><a data-val="320400" href="javascript:void(0)">常州</a></li>
+                <li><a data-val="330282" href="javascript:void(0)">慈溪</a></li>
+                <li><a data-val="320581" href="javascript:void(0)">常熟</a></li>
+                <li><a data-val="130800" href="javascript:void(0)">承德</a></li>
+                <li><a data-val="150400" href="javascript:void(0)">赤峰</a></li>
+                <li><a data-val="220100" href="javascript:void(0)">长春</a></li>
+                <li><a data-val="431000" href="javascript:void(0)">郴州</a></li>
+                <li><a data-val="430100" href="javascript:void(0)">长沙</a></li>
+                <li><a data-val="341100" href="javascript:void(0)">滁州</a></li>
+                <li><a data-val="430700" href="javascript:void(0)">常德</a></li>
+                <li><a data-val="341400" href="javascript:void(0)">巢湖</a></li>
+                <li><a data-val="341700" href="javascript:void(0)">池州</a></li>
+                <li><a data-val="469027" href="javascript:void(0)">澄迈</a></li>
+                <li><a data-val="451400" href="javascript:void(0)">崇左</a></li>
+                <li><a data-val="469031" href="javascript:void(0)">昌江</a></li>
+                <li><a data-val="532300" href="javascript:void(0)">楚雄</a></li>
+                <li><a data-val="445100" href="javascript:void(0)">潮州</a></li>
+                <li><a data-val="500100" href="javascript:void(0)">重庆</a></li>
+                <li><a data-val="510100" href="javascript:void(0)">成都</a></li>
+                <li><a data-val="542100" href="javascript:void(0)">昌都</a></li>
+                <li><a data-val="652300" href="javascript:void(0)">昌吉</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="dtop"></a>
+        <div class="letters_tit"> <span>D(以D为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="232700" href="javascript:void(0)">大兴安岭</a></li>
+                <li><a data-val="140200" href="javascript:void(0)">大同</a></li>
+                <li><a data-val="230600" href="javascript:void(0)">大庆</a></li>
+                <li><a data-val="321181" href="javascript:void(0)">丹阳</a></li>
+                <li><a data-val="210200" href="javascript:void(0)">大连</a></li>
+                <li><a data-val="210600" href="javascript:void(0)">丹东</a></li>
+                <li><a data-val="370500" href="javascript:void(0)">东营</a></li>
+                <li><a data-val="371400" href="javascript:void(0)">德州</a></li>
+                <li><a data-val="511700" href="javascript:void(0)">达州</a></li>
+                <li><a data-val="532900" href="javascript:void(0)">大理</a></li>
+                <li><a data-val="469003" href="javascript:void(0)">儋州</a></li>
+                <li><a data-val="469025" href="javascript:void(0)">定安</a></li>
+                <li><a data-val="533400" href="javascript:void(0)">迪庆</a></li>
+                <li><a data-val="510600" href="javascript:void(0)">德阳</a></li>
+                <li><a data-val="469007" href="javascript:void(0)">东方</a></li>
+                <li><a data-val="533100" href="javascript:void(0)">德宏</a></li>
+                <li><a data-val="441900" href="javascript:void(0)">东莞</a></li>
+                <li><a data-val="621100" href="javascript:void(0)">定西</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="etop"></a>
+        <div class="letters_tit"> <span>E(以E为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="150600" href="javascript:void(0)">鄂尔多斯</a></li>
+                <li><a data-val="420700" href="javascript:void(0)">鄂州</a></li>
+                <li><a data-val="422800" href="javascript:void(0)">恩施</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ftop"></a>
+        <div class="letters_tit"> <span>F(以F为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="210900" href="javascript:void(0)">阜新</a></li>
+                <li><a data-val="210400" href="javascript:void(0)">抚顺</a></li>
+                <li><a data-val="350181" href="javascript:void(0)">福清</a></li>
+                <li><a data-val="341200" href="javascript:void(0)">阜阳</a></li>
+                <li><a data-val="370983" href="javascript:void(0)">肥城</a></li>
+                <li><a data-val="361000" href="javascript:void(0)">抚州</a></li>
+                <li><a data-val="350100" href="javascript:void(0)">福州</a></li>
+                <li><a data-val="440600" href="javascript:void(0)">佛山</a></li>
+                <li><a data-val="450600" href="javascript:void(0)">防城港</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="gtop"></a>
+        <div class="letters_tit"> <span>G(以G为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="440100" href="javascript:void(0)">广州</a></li>
+                <li><a data-val="360700" href="javascript:void(0)">赣州</a></li>
+                <li><a data-val="510800" href="javascript:void(0)">广元</a></li>
+                <li><a data-val="511600" href="javascript:void(0)">广安</a></li>
+                <li><a data-val="450300" href="javascript:void(0)">桂林</a></li>
+                <li><a data-val="450800" href="javascript:void(0)">贵港</a></li>
+                <li><a data-val="520100" href="javascript:void(0)">贵阳</a></li>
+                <li><a data-val="513300" href="javascript:void(0)">甘孜</a></li>
+                <li><a data-val="623000" href="javascript:void(0)">甘南</a></li>
+                <li><a data-val="640400" href="javascript:void(0)">固原</a></li>
+                <li><a data-val="632600" href="javascript:void(0)">果洛</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="htop"></a>
+        <div class="letters_tit"> <span>H(以H为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="231100" href="javascript:void(0)">黑河</a></li>
+                <li><a data-val="211400" href="javascript:void(0)">葫芦岛</a></li>
+                <li><a data-val="330481" href="javascript:void(0)">海宁</a></li>
+                <li><a data-val="320800" href="javascript:void(0)">淮安</a></li>
+                <li><a data-val="131100" href="javascript:void(0)">衡水</a></li>
+                <li><a data-val="150100" href="javascript:void(0)">呼和浩特</a></li>
+                <li><a data-val="330500" href="javascript:void(0)">湖州</a></li>
+                <li><a data-val="230400" href="javascript:void(0)">鹤岗</a></li>
+                <li><a data-val="150700" href="javascript:void(0)">呼伦贝尔</a></li>
+                <li><a data-val="230100" href="javascript:void(0)">哈尔滨</a></li>
+                <li><a data-val="130400" href="javascript:void(0)">邯郸</a></li>
+                <li><a data-val="330100" href="javascript:void(0)">杭州</a></li>
+                <li><a data-val="410600" href="javascript:void(0)">鹤壁</a></li>
+                <li><a data-val="371700" href="javascript:void(0)">菏泽</a></li>
+                <li><a data-val="420200" href="javascript:void(0)">黄石</a></li>
+                <li><a data-val="431200" href="javascript:void(0)">怀化</a></li>
+                <li><a data-val="340600" href="javascript:void(0)">淮北</a></li>
+                <li><a data-val="421100" href="javascript:void(0)">黄冈</a></li>
+                <li><a data-val="430400" href="javascript:void(0)">衡阳</a></li>
+                <li><a data-val="340100" href="javascript:void(0)">合肥</a></li>
+                <li><a data-val="340400" href="javascript:void(0)">淮南</a></li>
+                <li><a data-val="341000" href="javascript:void(0)">黄山</a></li>
+                <li><a data-val="451200" href="javascript:void(0)">河池</a></li>
+                <li><a data-val="460100" href="javascript:void(0)">海口</a></li>
+                <li><a data-val="441600" href="javascript:void(0)">河源</a></li>
+                <li><a data-val="532500" href="javascript:void(0)">红河</a></li>
+                <li><a data-val="441300" href="javascript:void(0)">惠州</a></li>
+                <li><a data-val="610700" href="javascript:void(0)">汉中</a></li>
+                <li><a data-val="451100" href="javascript:void(0)">贺州</a></li>
+                <li><a data-val="632800" href="javascript:void(0)">海西</a></li>
+                <li><a data-val="632100" href="javascript:void(0)">海东</a></li>
+                <li><a data-val="632300" href="javascript:void(0)">黄南</a></li>
+                <li><a data-val="652200" href="javascript:void(0)">哈密</a></li>
+                <li><a data-val="632200" href="javascript:void(0)">海北</a></li>
+                <li><a data-val="653200" href="javascript:void(0)">和田</a></li>
+                <li><a data-val="632500" href="javascript:void(0)">海南州</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="jtop"></a>
+        <div class="letters_tit"> <span>J(以J为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="210700" href="javascript:void(0)">锦州</a></li>
+                <li><a data-val="330700" href="javascript:void(0)">金华</a></li>
+                <li><a data-val="140700" href="javascript:void(0)">晋中</a></li>
+                <li><a data-val="320281" href="javascript:void(0)">江阴</a></li>
+                <li><a data-val="220200" href="javascript:void(0)">吉林</a></li>
+                <li><a data-val="230800" href="javascript:void(0)">佳木斯</a></li>
+                <li><a data-val="230300" href="javascript:void(0)">鸡西</a></li>
+                <li><a data-val="330400" href="javascript:void(0)">嘉兴</a></li>
+                <li><a data-val="140500" href="javascript:void(0)">晋城</a></li>
+                <li><a data-val="350582" href="javascript:void(0)">晋江</a></li>
+                <li><a data-val="370282" href="javascript:void(0)">即墨</a></li>
+                <li><a data-val="360800" href="javascript:void(0)">吉安</a></li>
+                <li><a data-val="370100" href="javascript:void(0)">济南</a></li>
+                <li><a data-val="420800" href="javascript:void(0)">荆门</a></li>
+                <li><a data-val="410800" href="javascript:void(0)">焦作</a></li>
+                <li><a data-val="370800" href="javascript:void(0)">济宁</a></li>
+                <li><a data-val="410881" href="javascript:void(0)">济源</a></li>
+                <li><a data-val="421000" href="javascript:void(0)">荆州</a></li>
+                <li><a data-val="360400" href="javascript:void(0)">九江</a></li>
+                <li><a data-val="360200" href="javascript:void(0)">景德镇</a></li>
+                <li><a data-val="445200" href="javascript:void(0)">揭阳</a></li>
+                <li><a data-val="620300" href="javascript:void(0)">金昌</a></li>
+                <li><a data-val="440700" href="javascript:void(0)">江门</a></li>
+                <li><a data-val="620200" href="javascript:void(0)">嘉峪关</a></li>
+                <li><a data-val="620900" href="javascript:void(0)">酒泉</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ktop"></a>
+        <div class="letters_tit"> <span>K(以K为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="320583" href="javascript:void(0)">昆山</a></li>
+                <li><a data-val="410200" href="javascript:void(0)">开封</a></li>
+                <li><a data-val="530100" href="javascript:void(0)">昆明</a></li>
+                <li><a data-val="650200" href="javascript:void(0)">克拉玛依</a></li>
+                <li><a data-val="653000" href="javascript:void(0)">阿图什</a></li>
+                <li><a data-val="653100" href="javascript:void(0)">喀什</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ltop"></a>
+        <div class="letters_tit"> <span>L(以L为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="141000" href="javascript:void(0)">临汾</a></li>
+                <li><a data-val="131000" href="javascript:void(0)">廊坊</a></li>
+                <li><a data-val="211000" href="javascript:void(0)">辽阳</a></li>
+                <li><a data-val="220400" href="javascript:void(0)">辽源</a></li>
+                <li><a data-val="141100" href="javascript:void(0)">吕梁</a></li>
+                <li><a data-val="320700" href="javascript:void(0)">连云港</a></li>
+                <li><a data-val="371200" href="javascript:void(0)">莱芜</a></li>
+                <li><a data-val="411100" href="javascript:void(0)">漯河</a></li>
+                <li><a data-val="331100" href="javascript:void(0)">丽水</a></li>
+                <li><a data-val="341500" href="javascript:void(0)">六安</a></li>
+                <li><a data-val="431300" href="javascript:void(0)">娄底</a></li>
+                <li><a data-val="350800" href="javascript:void(0)">龙岩</a></li>
+                <li><a data-val="370681" href="javascript:void(0)">龙口</a></li>
+                <li><a data-val="371300" href="javascript:void(0)">临沂</a></li>
+                <li><a data-val="410300" href="javascript:void(0)">洛阳</a></li>
+                <li><a data-val="371500" href="javascript:void(0)">聊城</a></li>
+                <li><a data-val="530700" href="javascript:void(0)">丽江</a></li>
+                <li><a data-val="451300" href="javascript:void(0)">来宾</a></li>
+                <li><a data-val="510500" href="javascript:void(0)">泸州</a></li>
+                <li><a data-val="530900" href="javascript:void(0)">临沧</a></li>
+                <li><a data-val="469033" href="javascript:void(0)">乐东</a></li>
+                <li><a data-val="511100" href="javascript:void(0)">乐山</a></li>
+                <li><a data-val="620100" href="javascript:void(0)">兰州</a></li>
+                <li><a data-val="450200" href="javascript:void(0)">柳州</a></li>
+                <li><a data-val="513400" href="javascript:void(0)">凉山</a></li>
+                <li><a data-val="469034" href="javascript:void(0)">陵水</a></li>
+                <li><a data-val="542600" href="javascript:void(0)">林芝</a></li>
+                <li><a data-val="469028" href="javascript:void(0)">临高</a></li>
+                <li><a data-val="540100" href="javascript:void(0)">拉萨</a></li>
+                <li><a data-val="520200" href="javascript:void(0)">六盘水</a></li>
+                <li><a data-val="621200" href="javascript:void(0)">陇南</a></li>
+                <li><a data-val="622900" href="javascript:void(0)">临夏</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="mtop"></a>
+        <div class="letters_tit"> <span>M(以M为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="231000" href="javascript:void(0)">牡丹江</a></li>
+                <li><a data-val="340500" href="javascript:void(0)">马鞍山</a></li>
+                <li><a data-val="510700" href="javascript:void(0)">绵阳</a></li>
+                <li><a data-val="511400" href="javascript:void(0)">眉山</a></li>
+                <li><a data-val="440900" href="javascript:void(0)">茂名</a></li>
+                <li><a data-val="441400" href="javascript:void(0)">梅州</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ntop"></a>
+        <div class="letters_tit"> <span>N(以N为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="320100" href="javascript:void(0)">南京</a></li>
+                <li><a data-val="330200" href="javascript:void(0)">宁波</a></li>
+                <li><a data-val="320600" href="javascript:void(0)">南通</a></li>
+                <li><a data-val="360100" href="javascript:void(0)">南昌</a></li>
+                <li><a data-val="411300" href="javascript:void(0)">南阳</a></li>
+                <li><a data-val="350700" href="javascript:void(0)">南平</a></li>
+                <li><a data-val="350900" href="javascript:void(0)">宁德</a></li>
+                <li><a data-val="350583" href="javascript:void(0)">南安</a></li>
+                <li><a data-val="542400" href="javascript:void(0)">那曲</a></li>
+                <li><a data-val="450100" href="javascript:void(0)">南宁</a></li>
+                <li><a data-val="511300" href="javascript:void(0)">南充</a></li>
+                <li><a data-val="511000" href="javascript:void(0)">内江</a></li>
+                <li><a data-val="533300" href="javascript:void(0)">怒江</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ptop"></a>
+        <div class="letters_tit"> <span>P(以P为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="211100" href="javascript:void(0)">盘锦</a></li>
+                <li><a data-val="360300" href="javascript:void(0)">萍乡</a></li>
+                <li><a data-val="410400" href="javascript:void(0)">平顶山</a></li>
+                <li><a data-val="410900" href="javascript:void(0)">濮阳</a></li>
+                <li><a data-val="350300" href="javascript:void(0)">莆田</a></li>
+                <li><a data-val="510400" href="javascript:void(0)">攀枝花</a></li>
+                <li><a data-val="530800" href="javascript:void(0)">普洱</a></li>
+                <li><a data-val="620800" href="javascript:void(0)">平凉</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="qtop"></a>
+        <div class="letters_tit"> <span>Q(以Q为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="130300" href="javascript:void(0)">秦皇岛</a></li>
+                <li><a data-val="230200" href="javascript:void(0)">齐齐哈尔</a></li>
+                <li><a data-val="230900" href="javascript:void(0)">七台河</a></li>
+                <li><a data-val="350500" href="javascript:void(0)">泉州</a></li>
+                <li><a data-val="429005" href="javascript:void(0)">潜江</a></li>
+                <li><a data-val="370200" href="javascript:void(0)">青岛</a></li>
+                <li><a data-val="330800" href="javascript:void(0)">衢州</a></li>
+                <li><a data-val="441800" href="javascript:void(0)">清远</a></li>
+                <li><a data-val="522700" href="javascript:void(0)">黔南</a></li>
+                <li><a data-val="450700" href="javascript:void(0)">钦州</a></li>
+                <li><a data-val="530300" href="javascript:void(0)">曲靖</a></li>
+                <li><a data-val="522300" href="javascript:void(0)">黔西南</a></li>
+                <li><a data-val="621000" href="javascript:void(0)">庆阳</a></li>
+                <li><a data-val="522600" href="javascript:void(0)">黔东南</a></li>
+                <li><a data-val="469002" href="javascript:void(0)">琼海</a></li>
+                <li><a data-val="469036" href="javascript:void(0)">琼中</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="rtop"></a>
+        <div class="letters_tit"> <span>R(以R为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="320682" href="javascript:void(0)">如皋</a></li>
+                <li><a data-val="371082" href="javascript:void(0)">荣成</a></li>
+                <li><a data-val="371100" href="javascript:void(0)">日照</a></li>
+                <li><a data-val="542301" href="javascript:void(0)">日喀则</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="stop"></a>
+        <div class="letters_tit"> <span>S(以S为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="220300" href="javascript:void(0)">四平</a></li>
+                <li><a data-val="231200" href="javascript:void(0)">绥化</a></li>
+                <li><a data-val="220700" href="javascript:void(0)">松原</a></li>
+                <li><a data-val="320500" href="javascript:void(0)">苏州</a></li>
+                <li><a data-val="310100" href="javascript:void(0)">上海</a></li>
+                <li><a data-val="321300" href="javascript:void(0)">宿迁</a></li>
+                <li><a data-val="330600" href="javascript:void(0)">绍兴</a></li>
+                <li><a data-val="140600" href="javascript:void(0)">朔州</a></li>
+                <li><a data-val="230500" href="javascript:void(0)">双鸭山</a></li>
+                <li><a data-val="210100" href="javascript:void(0)">沈阳</a></li>
+                <li><a data-val="330682" href="javascript:void(0)">上虞</a></li>
+                <li><a data-val="130100" href="javascript:void(0)">石家庄</a></li>
+                <li><a data-val="440500" href="javascript:void(0)">汕头</a></li>
+                <li><a data-val="350400" href="javascript:void(0)">三明</a></li>
+                <li><a data-val="429021" href="javascript:void(0)">神农架</a></li>
+                <li><a data-val="361100" href="javascript:void(0)">上饶</a></li>
+                <li><a data-val="411400" href="javascript:void(0)">商丘</a></li>
+                <li><a data-val="421300" href="javascript:void(0)">随州</a></li>
+                <li><a data-val="341300" href="javascript:void(0)">宿州</a></li>
+                <li><a data-val="411200" href="javascript:void(0)">三门峡</a></li>
+                <li><a data-val="420300" href="javascript:void(0)">十堰</a></li>
+                <li><a data-val="440300" href="javascript:void(0)">深圳</a></li>
+                <li><a data-val="430500" href="javascript:void(0)">邵阳</a></li>
+                <li><a data-val="440200" href="javascript:void(0)">韶关</a></li>
+                <li><a data-val="441500" href="javascript:void(0)">汕尾</a></li>
+                <li><a data-val="510900" href="javascript:void(0)">遂宁</a></li>
+                <li><a data-val="611000" href="javascript:void(0)">商洛</a></li>
+                <li><a data-val="542200" href="javascript:void(0)">山南</a></li>
+                <li><a data-val="460200" href="javascript:void(0)">三亚</a></li>
+                <li><a data-val="640200" href="javascript:void(0)">石嘴山</a></li>
+                <li><a data-val="659001" href="javascript:void(0)">石河子</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ttop"></a>
+        <div class="letters_tit"> <span>T(以T为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="140100" href="javascript:void(0)">太原</a></li>
+                <li><a data-val="211200" href="javascript:void(0)">铁岭</a></li>
+                <li><a data-val="220500" href="javascript:void(0)">通化</a></li>
+                <li><a data-val="130200" href="javascript:void(0)">唐山</a></li>
+                <li><a data-val="320585" href="javascript:void(0)">太仓</a></li>
+                <li><a data-val="120100" href="javascript:void(0)">天津</a></li>
+                <li><a data-val="321200" href="javascript:void(0)">泰州</a></li>
+                <li><a data-val="150500" href="javascript:void(0)">通辽</a></li>
+                <li><a data-val="331000" href="javascript:void(0)">台州</a></li>
+                <li><a data-val="370900" href="javascript:void(0)">泰安</a></li>
+                <li><a data-val="429006" href="javascript:void(0)">天门</a></li>
+                <li><a data-val="340700" href="javascript:void(0)">铜陵</a></li>
+                <li><a data-val="522201" href="javascript:void(0)">铜仁</a></li>
+                <li><a data-val="469026" href="javascript:void(0)">屯昌</a></li>
+                <li><a data-val="610200" href="javascript:void(0)">铜川</a></li>
+                <li><a data-val="620500" href="javascript:void(0)">天水</a></li>
+                <li><a data-val="654200" href="javascript:void(0)">塔城</a></li>
+                <li><a data-val="659003" href="javascript:void(0)">图木舒克</a></li>
+                <li><a data-val="652100" href="javascript:void(0)">吐鲁番</a></li>
+                <li><a data-val="710100" href="javascript:void(0)">台湾</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="wtop"></a>
+        <div class="letters_tit"> <span>W(以W为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="330300" href="javascript:void(0)">温州</a></li>
+                <li><a data-val="320200" href="javascript:void(0)">无锡</a></li>
+                <li><a data-val="150900" href="javascript:void(0)">乌兰察布</a></li>
+                <li><a data-val="150300" href="javascript:void(0)">乌海</a></li>
+                <li><a data-val="340200" href="javascript:void(0)">芜湖</a></li>
+                <li><a data-val="420100" href="javascript:void(0)">武汉</a></li>
+                <li><a data-val="370700" href="javascript:void(0)">潍坊</a></li>
+                <li><a data-val="371000" href="javascript:void(0)">威海</a></li>
+                <li><a data-val="469006" href="javascript:void(0)">万宁</a></li>
+                <li><a data-val="610500" href="javascript:void(0)">渭南</a></li>
+                <li><a data-val="469005" href="javascript:void(0)">文昌</a></li>
+                <li><a data-val="469001" href="javascript:void(0)">五指山</a></li>
+                <li><a data-val="620600" href="javascript:void(0)">武威</a></li>
+                <li><a data-val="450400" href="javascript:void(0)">梧州</a></li>
+                <li><a data-val="532600" href="javascript:void(0)">文山</a></li>
+                <li><a data-val="659004" href="javascript:void(0)">五家渠</a></li>
+                <li><a data-val="640300" href="javascript:void(0)">吴忠</a></li>
+                <li><a data-val="650100" href="javascript:void(0)">乌鲁木齐</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="xtop"></a>
+        <div class="letters_tit"> <span>X(以X为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="140900" href="javascript:void(0)">忻州</a></li>
+                <li><a data-val="152500" href="javascript:void(0)">锡林郭勒</a></li>
+                <li><a data-val="130500" href="javascript:void(0)">邢台</a></li>
+                <li><a data-val="152200" href="javascript:void(0)">兴安</a></li>
+                <li><a data-val="320300" href="javascript:void(0)">徐州</a></li>
+                <li><a data-val="410700" href="javascript:void(0)">新乡</a></li>
+                <li><a data-val="420600" href="javascript:void(0)">襄阳</a></li>
+                <li><a data-val="360500" href="javascript:void(0)">新余</a></li>
+                <li><a data-val="411500" href="javascript:void(0)">信阳</a></li>
+                <li><a data-val="429004" href="javascript:void(0)">仙桃</a></li>
+                <li><a data-val="411000" href="javascript:void(0)">许昌</a></li>
+                <li><a data-val="430300" href="javascript:void(0)">湘潭</a></li>
+                <li><a data-val="350200" href="javascript:void(0)">厦门</a></li>
+                <li><a data-val="341800" href="javascript:void(0)">宣城</a></li>
+                <li><a data-val="420900" href="javascript:void(0)">孝感</a></li>
+                <li><a data-val="421200" href="javascript:void(0)">咸宁</a></li>
+                <li><a data-val="433100" href="javascript:void(0)">湘西</a></li>
+                <li><a data-val="610100" href="javascript:void(0)">西安</a></li>
+                <li><a data-val="610400" href="javascript:void(0)">咸阳</a></li>
+                <li><a data-val="532800" href="javascript:void(0)">西双版纳</a></li>
+                <li><a data-val="630100" href="javascript:void(0)">西宁</a></li>
+                <li><a data-val="810100" href="javascript:void(0)">香港</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ytop"></a>
+        <div class="letters_tit"> <span>Y(以Y为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="320282" href="javascript:void(0)">宜兴</a></li>
+                <li><a data-val="222400" href="javascript:void(0)">延边</a></li>
+                <li><a data-val="321000" href="javascript:void(0)">扬州</a></li>
+                <li><a data-val="140800" href="javascript:void(0)">运城</a></li>
+                <li><a data-val="320900" href="javascript:void(0)">盐城</a></li>
+                <li><a data-val="140300" href="javascript:void(0)">阳泉</a></li>
+                <li><a data-val="330281" href="javascript:void(0)">余姚</a></li>
+                <li><a data-val="230700" href="javascript:void(0)">伊春</a></li>
+                <li><a data-val="210800" href="javascript:void(0)">营口</a></li>
+                <li><a data-val="370600" href="javascript:void(0)">烟台</a></li>
+                <li><a data-val="420500" href="javascript:void(0)">宜昌</a></li>
+                <li><a data-val="430600" href="javascript:void(0)">岳阳</a></li>
+                <li><a data-val="360900" href="javascript:void(0)">宜春</a></li>
+                <li><a data-val="430900" href="javascript:void(0)">益阳</a></li>
+                <li><a data-val="330782" href="javascript:void(0)">义乌</a></li>
+                <li><a data-val="360600" href="javascript:void(0)">鹰潭</a></li>
+                <li><a data-val="431100" href="javascript:void(0)">永州</a></li>
+                <li><a data-val="450900" href="javascript:void(0)">玉林</a></li>
+                <li><a data-val="511800" href="javascript:void(0)">雅安</a></li>
+                <li><a data-val="530400" href="javascript:void(0)">玉溪</a></li>
+                <li><a data-val="441700" href="javascript:void(0)">阳江</a></li>
+                <li><a data-val="610800" href="javascript:void(0)">榆林</a></li>
+                <li><a data-val="511500" href="javascript:void(0)">宜宾</a></li>
+                <li><a data-val="445300" href="javascript:void(0)">云浮</a></li>
+                <li><a data-val="610600" href="javascript:void(0)">延安</a></li>
+                <li><a data-val="654000" href="javascript:void(0)">伊犁</a></li>
+                <li><a data-val="640100" href="javascript:void(0)">银川</a></li>
+                <li><a data-val="632700" href="javascript:void(0)">玉树</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="letters_city"> <a name="ztop"></a>
+        <div class="letters_tit"> <span>Z(以Z为开头的城市名)</span> </div>
+        <div class="letters_list">
+            <ul>
+                <li><a data-val="130700" href="javascript:void(0)">张家口</a></li>
+                <li><a data-val="330681" href="javascript:void(0)">诸暨</a></li>
+                <li><a data-val="321100" href="javascript:void(0)">镇江</a></li>
+                <li><a data-val="320582" href="javascript:void(0)">张家港</a></li>
+                <li><a data-val="211300" href="javascript:void(0)">朝阳</a></li>
+                <li><a data-val="430800" href="javascript:void(0)">张家界</a></li>
+                <li><a data-val="410100" href="javascript:void(0)">郑州</a></li>
+                <li><a data-val="370400" href="javascript:void(0)">枣庄</a></li>
+                <li><a data-val="330900" href="javascript:void(0)">舟山</a></li>
+                <li><a data-val="440183" href="javascript:void(0)">增城</a></li>
+                <li><a data-val="440400" href="javascript:void(0)">珠海</a></li>
+                <li><a data-val="411600" href="javascript:void(0)">周口</a></li>
+                <li><a data-val="370300" href="javascript:void(0)">淄博</a></li>
+                <li><a data-val="430200" href="javascript:void(0)">株洲</a></li>
+                <li><a data-val="350600" href="javascript:void(0)">漳州</a></li>
+                <li><a data-val="411700" href="javascript:void(0)">驻马店</a></li>
+                <li><a data-val="440800" href="javascript:void(0)">湛江</a></li>
+                <li><a data-val="520300" href="javascript:void(0)">遵义</a></li>
+                <li><a data-val="510300" href="javascript:void(0)">自贡</a></li>
+                <li><a data-val="530600" href="javascript:void(0)">昭通</a></li>
+                <li><a data-val="441200" href="javascript:void(0)">肇庆</a></li>
+                <li><a data-val="442000" href="javascript:void(0)">中山</a></li>
+                <li><a data-val="620700" href="javascript:void(0)">张掖</a></li>
+                <li><a data-val="512000" href="javascript:void(0)">资阳</a></li>
+                <li><a data-val="640500" href="javascript:void(0)">中卫</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 <script src="js/mobiscroll.javascript.min.js"></script>
-<script src="js/area_array.js"></script>
-<script src="js/mobiscroll.area.js"></script>
 <script type="text/javascript" src="layer/mobile/layer.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/myform_validate.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 <script>
+
     $('.sex_box>div').click(function () {
        $(this).children('input[type="radio"]').prop('checked',true);
         $(this).children(".is_checkbox").addClass('active')
@@ -436,7 +1052,7 @@
         //alert(status)
     })
 
-    $('.is_agree,.is_apply').click(function () {
+    $('.is_apply').click(function () {
         var status = $(this).hasClass('active');
         //alert(status)
         if(status){
@@ -445,6 +1061,28 @@
         }else{
             $(this).addClass('active')
             $(this).next('input[type="checkbox"]').prop('checked',true)
+        }
+    });
+    $('.gift').click(function () {
+        var is_apply = $('.is_apply');
+        var status = is_apply.hasClass('active');
+        if(status){
+            is_apply.removeClass('active')
+            is_apply.next('input[type="checkbox"]').prop('checked',false)
+        }else{
+            is_apply.addClass('active')
+            is_apply.next('input[type="checkbox"]').prop('checked',true)
+        }
+    });
+    $('.is_agree').click(function () {
+        var status = $(this).hasClass('active');
+        //alert(status)
+        if(status){
+            $(this).removeClass('active')
+            $(this).next('input[type="checkbox"]').prop('checked',true)
+        }else{
+            $(this).addClass('active')
+            $(this).next('input[type="checkbox"]').removeAttrs('checked')
         }
     });
 
@@ -458,38 +1096,35 @@
         headerText:'出生日期',
         monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12']
     });
-
-    mobiscroll.area('#city', {
-        theme: 'android-holo',
-        display: 'center',
-        lang:'zh',
-        showLabel: true
-    });
-
     $('.idcard').keyup(function () {
         var l =$(this).val().length;
         if(l>0){
-            $('.down_idcard ').show();
+            $(this).css('padding-right','21px');
+            $('.down_idcard ').fadeIn(800);
         }else{
+            $(this).css('padding-right','0');
             $('.down_idcard ').hide();
         }
     });
 
     $('.down_idcard').click(function () {
+        $('.idcard').css('padding-right','0')
         $('.idcard').val('').focus();
         $('.down_idcard ').hide();
     });
     //select框
-    $('.money').focus(function () {
+    $('.money').click(function () {
         var h = $(document).height();
         $('.mask').css('height',h).show();
-        $('.money_box').slideDown('fast')
+        $('.money_box').slideDown('fast');
+        document.activeElement.blur();
     });
 
-    $('.job').focus(function () {
+    $('.job').click(function () {
         var h = $(document).height();
         $('.mask').css('height',h).show();
         $('.job_box').slideDown('fast')
+        document.activeElement.blur();
     });
 
     $('.money_box ul li').click(function () {
@@ -532,20 +1167,94 @@
         rsdio.prop('checked',false);
     }
 
+    var phone_res = false;
+    function isphone(el) {
+        var str = $('.'+el).val();
+        var reg = /^(13[0-9]|14[5|7]|15[0-9]|17[0-9]|18[0-9])\d{8}$/;
+        if(str.length == 0){
+            layer.open({
+                content:'手机号码不能为空',
+                anim:false,
+                skin:'msg',
+                time:2
+            });
+            return false
+        }else{
+            res = reg.test(str);
+            if(!res){
+                layer.open({
+                    content:'手机号码错误',
+                    anim:false,
+                    skin:'msg',
+                    time:2
+                });
+                return false
+            }else{
+                phone_res = true;
+            }
+        }
+    }
+    //获取验证码
     $('.getcode').click(function () {
+        isphone('phone');
         var num = 60;
         var _this = $(this);
-        var time = setInterval(function () {
-            num --;
-            _this.html(num + 's');
-            _this.attr('disabled','disabled');
-            if(num === 0 ){
-                clearInterval(time);
-                _this.html("获取验证码");
-                _this.removeAttr('disabled');
-            }
-        },1000)
+        if(phone_res){
+            var time = setInterval(function () {
+                num --;
+                _this.html(num + 's');
+                _this.attr('disabled','disabled');
+                if(num === 0 ){
+                    clearInterval(time);
+                    _this.html("获取验证码");
+                    _this.removeAttr('disabled');
+                }
+            },1000)
+        }
     });
 
-    // 表单验证end
+    //city
+    $('#city').click(function () {
+        $('.step_2').hide();
+        $('.city_box').show()
+        $("body").scrollTop(0);
+        document.activeElement.blur();
+    });
+    $('.x-close').click(function () {
+        $('.city_box').hide();
+        $('.step_2').show()
+        $("body").scrollTop(0);
+    });
+    $('.letters_list ul li,.hot_list ul li').click(function () {
+        var city_str = $(this).children('a').html();
+        var city_code = $(this).children('a').attr('data-val');
+        $('#city').val(city_str);
+        $('#city').attr('data-val',city_code);
+        $('.city_box').hide();
+        $('.step_2').show()
+        $("body").scrollTop(0);
+    });
+
+    var arr = new Array();
+    $('.letters_list ul li').each(function (index) {
+        var citycode = $(this).children('a').attr('data-val');
+        var strcityname = $(this).children('a').html();
+        arr[index] = new Array(citycode,strcityname);
+
+    });
+
+    //根据ip定位城市并修改对应的城市是代码
+    var strname = returnCitySN.cname;
+    cityname = strname.replace('市','');
+    $('#gpsCity').html(cityname);
+    $('#city').val(cityname);
+    //console.log(arr);
+    for(var i = 0;i<arr.length;i++){
+        if(arr[i][1] == cityname){
+            $('#gpsCity').attr('data-val',arr[i][0]);
+        }
+    }
+    var citycode = $('#gpsCity').attr('data-val');
+    //alert(citycode);
+    $('#city').attr('data-val',citycode);
 </script>
