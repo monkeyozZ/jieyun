@@ -35,7 +35,7 @@
                                 <div class="icon">
                                     <img src="images/account.png" alt="">
                                 </div>
-                                <input type="text" placeholder="请输入您的名字" name="name">
+                                <input type="text" placeholder="请输入您的姓名" name="name" class="name">
                             </div>
                         </li>
 
@@ -43,13 +43,13 @@
                             <div class="sex_box">
                                 <div class="sex_nan">
                                     <div class="is_checkbox"></div>
-                                    <input type="radio" name="sex">
+                                    <input type="radio" name="sex" class="sex">
                                     <span>男</span>
                                 </div>
 
                                 <div class="sex_nv">
                                     <div class="is_checkbox"></div>
-                                    <input type="radio" name="sex">
+                                    <input type="radio" name="sex" class="sex">
                                     <span>女</span>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                 <div class="icon">
                                     <img src="images/calc.png" alt="">
                                 </div>
-                                <input type="text" placeholder="请输入您的出生日期" name="birthday" id="birthday">
+                                <input type="text" placeholder="请输入您的出生日期" name="birthday" id="birthday" class="birth">
                             </div>
                         </li>
 
@@ -241,7 +241,7 @@
                         <div class="m2_right">
                             <div class="radio_box_2">
                                 <input type="radio" name="home" value="是" id="home_y">
-                                <label for="home_y" onclick="show_n('home_y','home_dai')" class='home_y'>是</label>
+                                <label for="home_y" onclick="show_n('home_y','home_dai')" class="home_y">是</label>
                             </div>
 
                             <div class="radio_box_2">
@@ -1041,220 +1041,4 @@
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/myform_validate.js"></script>
 <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
-<script>
-
-    $('.sex_box>div').click(function () {
-       $(this).children('input[type="radio"]').prop('checked',true);
-        $(this).children(".is_checkbox").addClass('active')
-        $(this).siblings().children(".is_checkbox").removeClass('active');
-        $(this).siblings().children('input[type="radio"]').prop('checked',false);
-        //var status = $(this).children('input[type="radio"]').is(':checked')
-        //alert(status)
-    })
-
-    $('.is_apply').click(function () {
-        var status = $(this).hasClass('active');
-        //alert(status)
-        if(status){
-            $(this).removeClass('active')
-            $(this).next('input[type="checkbox"]').prop('checked',false)
-        }else{
-            $(this).addClass('active')
-            $(this).next('input[type="checkbox"]').prop('checked',true)
-        }
-    });
-    $('.gift').click(function () {
-        var is_apply = $('.is_apply');
-        var status = is_apply.hasClass('active');
-        if(status){
-            is_apply.removeClass('active')
-            is_apply.next('input[type="checkbox"]').prop('checked',false)
-        }else{
-            is_apply.addClass('active')
-            is_apply.next('input[type="checkbox"]').prop('checked',true)
-        }
-    });
-    $('.is_agree').click(function () {
-        var status = $(this).hasClass('active');
-        //alert(status)
-        if(status){
-            $(this).removeClass('active')
-            $(this).next('input[type="checkbox"]').prop('checked',true)
-        }else{
-            $(this).addClass('active')
-            $(this).next('input[type="checkbox"]').removeAttrs('checked')
-        }
-    });
-
-    mobiscroll.date('#birthday',{
-        theme: 'android-holo',
-        display: 'center',
-        lang:'zh',
-        min: new Date(1947, 1, 1),
-        max: new Date(2000, 12, 31),
-        dateFormat:'yy-mm-dd',
-        headerText:'出生日期',
-        monthNamesShort:['1','2','3','4','5','6','7','8','9','10','11','12']
-    });
-    $('.idcard').keyup(function () {
-        var l =$(this).val().length;
-        if(l>0){
-            $(this).css('padding-right','21px');
-            $('.down_idcard ').fadeIn(800);
-        }else{
-            $(this).css('padding-right','0');
-            $('.down_idcard ').hide();
-        }
-    });
-
-    $('.down_idcard').click(function () {
-        $('.idcard').css('padding-right','0')
-        $('.idcard').val('').focus();
-        $('.down_idcard ').hide();
-    });
-    //select框
-    $('.money').click(function () {
-        var h = $(document).height();
-        $('.mask').css('height',h).show();
-        $('.money_box').slideDown('fast');
-        document.activeElement.blur();
-    });
-
-    $('.job').click(function () {
-        var h = $(document).height();
-        $('.mask').css('height',h).show();
-        $('.job_box').slideDown('fast')
-        document.activeElement.blur();
-    });
-
-    $('.money_box ul li').click(function () {
-        var str = $(this).html();
-        $('.money').val(str);
-        $('.money_box').slideUp('fast');
-        $('.mask').hide();
-    });
-
-    $('.job_box ul li').click(function () {
-        var str = $(this).html();
-        $('.job').val(str);
-        $('.job_box').slideUp('fast');
-        $('.mask').hide();
-    });
-
-    $('.cencal_money').click(function () {
-        $('.money_box').slideUp('fast');
-        $('.mask').hide();
-    });
-
-    $('.cencal_job').click(function () {
-        $('.job_box').slideUp('fast');
-        $('.mask').hide();
-    });
-    //end select框
-
-    function show_n(sel,namestr) {
-        $('.'+sel).parent().parent().parent().next('li').slideDown('fast');
-       var rsdio = $('.'+sel).parent().parent().parent().next('li').children().find('input[type="radio"]');
-       var status = typeof(rsdio.attr("name"))=="undefined";
-       if(status){
-           rsdio.attr('name',namestr)
-       }
-    }
-    function hide_n(sel) {
-        $('.'+sel).parent().parent().parent().next('li').slideUp('fast');
-        var rsdio = $('.'+sel).parent().parent().parent().next('li').children().find('input[type="radio"]');
-        rsdio.removeAttr('name');
-        rsdio.prop('checked',false);
-    }
-
-    var phone_res = false;
-    function isphone(el) {
-        var str = $('.'+el).val();
-        var reg = /^(13[0-9]|14[5|7]|15[0-9]|17[0-9]|18[0-9])\d{8}$/;
-        if(str.length == 0){
-            layer.open({
-                content:'手机号码不能为空',
-                anim:false,
-                skin:'msg',
-                time:2
-            });
-            return false
-        }else{
-            res = reg.test(str);
-            if(!res){
-                layer.open({
-                    content:'手机号码错误',
-                    anim:false,
-                    skin:'msg',
-                    time:2
-                });
-                return false
-            }else{
-                phone_res = true;
-            }
-        }
-    }
-    //获取验证码
-    $('.getcode').click(function () {
-        isphone('phone');
-        var num = 60;
-        var _this = $(this);
-        if(phone_res){
-            var time = setInterval(function () {
-                num --;
-                _this.html(num + 's');
-                _this.attr('disabled','disabled');
-                if(num === 0 ){
-                    clearInterval(time);
-                    _this.html("获取验证码");
-                    _this.removeAttr('disabled');
-                }
-            },1000)
-        }
-    });
-
-    //city
-    $('#city').click(function () {
-        $('.step_2').hide();
-        $('.city_box').show()
-        $("body").scrollTop(0);
-        document.activeElement.blur();
-    });
-    $('.x-close').click(function () {
-        $('.city_box').hide();
-        $('.step_2').show()
-        $("body").scrollTop(0);
-    });
-    $('.letters_list ul li,.hot_list ul li').click(function () {
-        var city_str = $(this).children('a').html();
-        var city_code = $(this).children('a').attr('data-val');
-        $('#city').val(city_str);
-        $('#city').attr('data-val',city_code);
-        $('.city_box').hide();
-        $('.step_2').show()
-        $("body").scrollTop(0);
-    });
-
-    var arr = new Array();
-    $('.letters_list ul li').each(function (index) {
-        var citycode = $(this).children('a').attr('data-val');
-        var strcityname = $(this).children('a').html();
-        arr[index] = new Array(citycode,strcityname);
-
-    });
-
-    //根据ip定位城市并修改对应的城市是代码
-    var strname = returnCitySN.cname;
-    cityname = strname.replace('市','');
-    $('#gpsCity').html(cityname);
-    $('#city').val(cityname);
-    //console.log(arr);
-    for(var i = 0;i<arr.length;i++){
-        if(arr[i][1] == cityname){
-            $('#gpsCity').attr('data-val',arr[i][0]);
-        }
-    }
-    var citycode = $('#gpsCity').attr('data-val');
-    //alert(citycode);
-    $('#city').attr('data-val',citycode);
-</script>
+<script src="js/index.js"></script>

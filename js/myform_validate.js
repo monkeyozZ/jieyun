@@ -20,7 +20,8 @@ $("#myform").validate({
             isphone:true
         },
         code:{
-            required:true
+            required:true,
+            iscode:true
         },
         xieyi:{
             required:true
@@ -40,7 +41,7 @@ $("#myform").validate({
             required:"请输入手机号码"
         },
         code:{
-            required:"请输入手机验证码"
+            required:"请输入手机验证码",
         },
         xieyi:{
             required:"请阅读并同意用户协议"
@@ -93,6 +94,11 @@ $.validator.addMethod("ischar",function(value,element,params){
     var ischar= /^[\u4e00-\u9fa5]{2,6}$/;
     return this.optional(element)||(ischar.test(value));
 },"请输入正确姓名！");
+
+$.validator.addMethod("iscode",function(value,element,params){
+    var iscode= /^[0-9]{4}$/;
+    return this.optional(element)||(iscode.test(value));
+},"请输入正确的数字验证码！");
 
 
 $.validator.addMethod("iscard",function(value,element,params){
